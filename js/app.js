@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 marca.addEventListener('change', e =>{
    datosBusqueda.marca = e.target.value;
 
-   console.log(datosBusqueda);
+   filtrarAuto();
 })
 
 year.addEventListener('change', e =>{
@@ -88,4 +88,19 @@ function llenarSelect() {
         opcion.textContent = i;
         year.appendChild(opcion);
     }
+}
+
+//Functions filters based on search
+
+function filtrarAuto() {
+    const resultado = autos.filter( filtrarMarca )
+    console.log(resultado)
+}
+
+function filtrarMarca(auto) {
+    const { marca } = datosBusqueda;
+   if ( marca ) {
+    return auto.marca === datosBusqueda.marca;
+   }
+   return auto;
 }
