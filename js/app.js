@@ -109,8 +109,6 @@ function filtrarMarca(auto) {
 
 function filtrarYear(auto) {
     const { year } = datosBusqueda;
-
-    console.log(year);
     if ( year ) {
         return auto.year === parseInt(year);
     }
